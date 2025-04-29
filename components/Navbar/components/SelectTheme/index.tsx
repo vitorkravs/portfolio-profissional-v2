@@ -24,7 +24,7 @@ export function SelectTheme() {
     const popoverRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        if (typeof window !== 'undefined' || typeof document !== "undefined") {
+        if (typeof window !== 'undefined' && typeof document !== "undefined") {
             if (!document.documentElement.classList.contains(color)) {
                 document.documentElement.classList.add(color)
             }
@@ -33,14 +33,16 @@ export function SelectTheme() {
     }, [color])
 
     useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
-                setIsOpen(false)
+        if (typeof document !== "undefined") {
+            const handleClickOutside = (event: MouseEvent) => {
+                if (popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
+                    setIsOpen(false)
+                }
             }
-        }
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
+            document.addEventListener('mousedown', handleClickOutside)
+            return () => {
+                document.removeEventListener('mousedown', handleClickOutside)
+            }
         }
     }, [])
 

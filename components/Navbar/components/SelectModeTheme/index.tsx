@@ -18,7 +18,7 @@ export default function SelectModeTheme() {
     };
 
     useEffect(() => {
-        if (typeof window !== 'undefined' || typeof document !== "undefined") {
+        if (typeof window !== 'undefined' && typeof document !== "undefined") {
             if (darkModeContext) {
                 document.documentElement.classList.add('dark')
             } else {
