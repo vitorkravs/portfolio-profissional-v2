@@ -1,5 +1,5 @@
 export function changeTheme(color: "cyan" | "orange" | "violet" | "emerald") {
-    if (typeof document === "undefined") return;
+    if (typeof document === "undefined" || !document) return;
 
     switch (color) {
         case "cyan":
