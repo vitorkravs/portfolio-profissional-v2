@@ -24,7 +24,7 @@ export function SelectTheme() {
     const popoverRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
+        if (typeof window !== 'undefined' || typeof document === "undefined" || !document) {
             if (!document.documentElement.classList.contains(color)) {
                 document.documentElement.classList.add(color)
             }
