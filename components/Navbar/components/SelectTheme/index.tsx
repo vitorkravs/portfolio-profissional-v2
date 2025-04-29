@@ -7,6 +7,15 @@ import { changeTheme } from '@/utils/changeTheme'
 
 import { MdCheck, MdOutlinePalette } from 'react-icons/md'
 
+interface ColorItem {
+    value: "cyan" | "orange" | "violet" | "emerald";
+    label: string;
+    colorClass: string;
+    textClass: string;
+    bgChecked: string;
+    darkBgChecked: string;
+};
+
 export function SelectTheme() {
     const color = useThemeStore(state => state.color)
     const setColor = useThemeStore(state => state.setColor)
@@ -35,7 +44,7 @@ export function SelectTheme() {
         }
     }, [])
 
-    const colors = [
+    const colors: ColorItem[] = [
         { value: 'cyan', label: 'Ciano', colorClass: 'bg-cyan-500', textClass: 'text-cyan-500', bgChecked: 'bg-cyan-50', darkBgChecked: 'dark:bg-cyan-700' },
         { value: 'orange', label: 'Laranja', colorClass: 'bg-orange-500', textClass: 'text-orange-500', bgChecked: 'bg-orange-50', darkBgChecked: 'dark:bg-orange-700' },
         { value: 'violet', label: 'Violeta', colorClass: 'bg-violet-500', textClass: 'text-violet-500', bgChecked: 'bg-violet-50', darkBgChecked: 'dark:bg-violet-700' },
@@ -57,12 +66,12 @@ export function SelectTheme() {
                 <div className="absolute right-0 mt-3.5 flex flex-col gap-3 bg-white shadow rounded-[8px] dark:bg-slate-900 text-gray-700 dark:text-gray-300 py-1.5 px-1 w-[230px] z-50">
 
                     <div className="flex flex-col gap-2 w-full">
-                        {colors.map((item) => {
+                        {colors.map((item: ColorItem) => {
                             const isSelected = color === item.value
                             return (
                                 <button
                                     key={item.value}
-                                    onClick={() => setColor(item.value as any)}
+                                    onClick={() => setColor(item.value)}
                                     className={`flex gap-2 items-center px-6 py-1.5 rounded-md transition-colors duration-300 cursor-pointer
                                         ${isSelected ? `${item.bgChecked} ${item.darkBgChecked}` : ''}
                                     `}
