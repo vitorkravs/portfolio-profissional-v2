@@ -11,12 +11,14 @@ import { changeTheme } from "@/utils/changeTheme";
 import rocketAnimation from "../../public/animations/rocket-animation.json"
 import Lottie from "lottie-react"
 
-export function Navbar() {
+export default function Navbar() {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setIsMounted(true);
-        changeTheme("cyan");
+        if (typeof document !== 'undefined') {
+            setIsMounted(true);
+            changeTheme("cyan");
+        }
     }, []);
 
     if (!isMounted) return null;
