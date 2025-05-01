@@ -32,14 +32,19 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed left-1/2 -translate-x-1/2 top-6 p-3 w-full max-w-[1000px] justify-between items-center flex gap-4 bg-slate-200 dark:bg-gray-950 rounded-full shadow-lg/30 shadow-main-400 transition-colors duration-300 z-50">
+            <motion.nav
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.45, ease: "easeOut", delay: 0.2 }}
+                className="lg:fixed lg:left-1/2 lg:-translate-x-1/2 lg:top-6 p-5 w-full max-w-[1000px] justify-end items-center flex md:gap-4 bg-slate-200 dark:bg-gray-950 lg:rounded-full shadow-lg/30 shadow-main-400 transition-colors duration-300 z-50">
                 {/* Home Navigation */}
-                <div className="flex items-center gap-4 pl-22 md:pl-18">
+                <div className="hidden md:flex items-center gap-4 w-full text-center lg:text-justify md:pl-18">
                     <Lottie
                         animationData={rocketAnimation}
-                        className="w-24 left-2 rotate-35 md:rotate-45 md:left-0 z-10 absolute"
+                        className="w-20 md:w-24 left-2 rotate-35 sm:rotate-90 sm:left-12 lg:rotate-45 lg:left-0 z-10 absolute"
                     />
-                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-purple-500 font-bold text-xl tracking-wide">
+                    <p className="w-full bg-white text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-purple-500 font-bold text-xl tracking-wide">
                         VK{" "}
                         <span className="relative inline-block">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-purple-500">
@@ -77,7 +82,7 @@ export default function Navbar() {
                     </div>
 
                     <motion.button
-                        className="lg:hidden p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors"
+                        className="lg:hidden p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors bg-main-500/40"
                         onClick={toggleMenu}
                         aria-label="Menu"
                         whileHover={{ scale: 1.1 }}
@@ -103,7 +108,7 @@ export default function Navbar() {
                         )}
                     </motion.button>
                 </div>
-            </nav>
+            </motion.nav>
 
             {/* Menu Mobile */}
             {isMenuOpen && (
@@ -112,7 +117,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-[400px] bg-slate-200 dark:bg-gray-950 rounded-2xl shadow-lg z-40 p-4 lg:hidden"
+                    className="absolute top-24 left-1/2 md:left-full -translate-x-1/2 md:-translate-x-[107%] w-[90%] max-w-[400px] bg-slate-200 dark:bg-gray-950 rounded-2xl shadow-lg z-40 p-4 lg:hidden"
                 >
                     <motion.div
                         className="flex flex-col gap-2"
