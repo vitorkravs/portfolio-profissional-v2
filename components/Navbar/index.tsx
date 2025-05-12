@@ -37,7 +37,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.45, ease: "easeOut", delay: 0.2 }}
-                className="lg:fixed lg:left-1/2 lg:-translate-x-1/2 lg:top-6 p-5 w-full max-w-[1000px] justify-end items-center flex md:gap-4 bg-slate-200 dark:bg-gray-950 lg:rounded-full shadow-lg/30 shadow-main-400 transition-colors duration-300 z-50">
+                className="lg:fixed lg:left-1/2 lg:-translate-x-1/2 lg:top-6 p-5 w-full max-w-[1000px] justify-end items-center flex md:gap-4 bg-slate-200 dark:bg-gray-950 lg:rounded-full md:shadow-lg/30 shadow-main-400 transition-colors duration-300 z-50">
                 {/* Home Navigation */}
                 <div className="hidden md:flex items-center gap-4 w-full text-center lg:text-justify md:pl-18">
                     <Lottie
