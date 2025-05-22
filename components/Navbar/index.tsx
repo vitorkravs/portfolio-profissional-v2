@@ -8,7 +8,7 @@ import { changeTheme } from "@/utils/changeTheme";
 import { SelectTheme } from "./components/SelectTheme";
 import SelectModeTheme from "./components/SelectModeTheme";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Lottie from "lottie-react";
 import rocketAnimation from "../../public/animations/rocket-animation.json";
@@ -81,112 +81,116 @@ export default function Navbar() {
                         <SelectTheme />
                     </div>
 
-                    <motion.button
-                        className="lg:hidden p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors bg-main-500/40"
-                        onClick={toggleMenu}
-                        aria-label="Menu"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    >
-                        {isMenuOpen ? (
-                            <motion.div
-                                initial={{ rotate: 0 }}
-                                animate={{ rotate: 180 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <X size={24} />
-                            </motion.div>
-                        ) : (
-                            <motion.div
-                                initial={{ rotate: 0 }}
-                                animate={{ rotate: 0 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <Menu size={24} />
-                            </motion.div>
-                        )}
-                    </motion.button>
+                    <AnimatePresence>
+                        <motion.button
+                            className="lg:hidden p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors bg-main-500/40"
+                            onClick={toggleMenu}
+                            aria-label="Menu"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        >
+                            {isMenuOpen ? (
+                                <motion.div
+                                    initial={{ rotate: 0 }}
+                                    animate={{ rotate: 180 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <X size={24} />
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    initial={{ rotate: 0 }}
+                                    animate={{ rotate: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <Menu size={24} />
+                                </motion.div>
+                            )}
+                        </motion.button>
+                    </AnimatePresence>
                 </div>
             </motion.nav>
 
             {/* Menu Mobile */}
-            {isMenuOpen && (
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-24 left-1/2 md:left-full -translate-x-1/2 md:-translate-x-[107%] w-[90%] max-w-[400px] bg-slate-200 dark:bg-gray-950 rounded-2xl shadow-lg z-40 p-4 lg:hidden"
-                >
+            <AnimatePresence>
+                {isMenuOpen && (
                     <motion.div
-                        className="flex flex-col gap-2"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ staggerChildren: 0.1 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="absolute top-24 left-1/2 md:left-full -translate-x-1/2 md:-translate-x-[107%] w-[90%] max-w-[400px] bg-slate-200 dark:bg-gray-950 rounded-2xl shadow-lg z-40 p-4 lg:hidden"
                     >
                         <motion.div
-                            initial={{ x: -10, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ delay: 0.05 }}
+                            className="flex flex-col gap-2"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ staggerChildren: 0.1 }}
                         >
-                            <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
-                                Sobre Mim
-                            </Button>
-                        </motion.div>
+                            <motion.div
+                                initial={{ x: -10, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.05 }}
+                            >
+                                <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
+                                    Sobre Mim
+                                </Button>
+                            </motion.div>
 
-                        <motion.div
-                            initial={{ x: -10, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ delay: 0.1 }}
-                        >
-                            <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
-                                Habilidades
-                            </Button>
-                        </motion.div>
+                            <motion.div
+                                initial={{ x: -10, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.1 }}
+                            >
+                                <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
+                                    Habilidades
+                                </Button>
+                            </motion.div>
 
-                        <motion.div
-                            initial={{ x: -10, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ delay: 0.15 }}
-                        >
-                            <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
-                                Experiência
-                            </Button>
-                        </motion.div>
+                            <motion.div
+                                initial={{ x: -10, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.15 }}
+                            >
+                                <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
+                                    Experiência
+                                </Button>
+                            </motion.div>
 
-                        <motion.div
-                            initial={{ x: -10, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
-                                Projetos
-                            </Button>
-                        </motion.div>
+                            <motion.div
+                                initial={{ x: -10, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.2 }}
+                            >
+                                <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
+                                    Projetos
+                                </Button>
+                            </motion.div>
 
-                        <motion.div
-                            initial={{ x: -10, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{ delay: 0.25 }}
-                        >
-                            <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
-                                Contato
-                            </Button>
-                        </motion.div>
+                            <motion.div
+                                initial={{ x: -10, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.25 }}
+                            >
+                                <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
+                                    Contato
+                                </Button>
+                            </motion.div>
 
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.3 }}
-                            className="flex justify-center items-center gap-2 border-[1.7px] rounded-full py-[6px] px-4 border-main-400/30 bg-main-400/5 shadow-sm mt-2"
-                        >
-                            <SelectModeTheme />
-                            <SelectTheme />
+                            <motion.div
+                                initial={{ scale: 0.9, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ delay: 0.3 }}
+                                className="flex justify-center items-center gap-2 border-[1.7px] rounded-full py-[6px] px-4 border-main-400/30 bg-main-400/5 shadow-sm mt-2"
+                            >
+                                <SelectModeTheme />
+                                <SelectTheme />
+                            </motion.div>
                         </motion.div>
                     </motion.div>
-                </motion.div>
-            )}
+                )}
+            </AnimatePresence>
         </>
     );
 }
