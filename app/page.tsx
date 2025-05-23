@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 
 import dynamic from "next/dynamic";
 
-const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: true })
+const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false })
 
 export default function Home() {
   return (
