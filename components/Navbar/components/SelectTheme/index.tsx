@@ -30,7 +30,7 @@ export function SelectTheme() {
             }
             changeTheme(color)
         }
-    }, [])
+    }, [color])
 
     useEffect(() => {
         if (typeof document !== "undefined") {
