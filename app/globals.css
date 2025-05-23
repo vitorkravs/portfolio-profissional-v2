@@ -437,20 +437,22 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-.container {
-  width: 100%;
-
-  @media only screen and (min-width: 1128px) {
-    max-width: 1128px;
-  };
-
-  @media only screen and (min-width: 1280px) {
-    max-width: 1280px;
-  };
-
-  @media only screen and (min-width: 1526px) {
-    max-width: 1526px;
-  };
+@layer components {
+  .container {
+    @apply w-full;
+    
+    @screen xl {
+      max-width: 1128px;
+    }
+    
+    @screen 2xl {
+      max-width: 1280px;
+    }
+    
+    @media (min-width: 1526px) {
+      max-width: 1526px;
+    }
+  }
 }
 
 /*
