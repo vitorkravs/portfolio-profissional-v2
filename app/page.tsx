@@ -22,7 +22,7 @@ export default function Home() {
       <div className="lg:mx-16">
         <Navbar />
       </div>
-      <div className="container flex justify-center items-center">
+      <div className="w-full flex justify-center items-center">
         <Header />
       </div>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">

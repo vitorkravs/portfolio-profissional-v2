@@ -89,7 +89,7 @@ export default function Header() {
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="w-full relative grid grid-cols-1 lg:grid-cols-2 md:gap-16 justify-center items-center min-h-[600px] md:min-h-screen transition-colors duration-300"
+            className="container relative grid grid-cols-1 lg:grid-cols-2 md:gap-16 justify-center items-center min-h-[600px] md:min-h-screen transition-colors duration-300"
         >
             {/* Conteúdo de Texto */}
             <motion.div
