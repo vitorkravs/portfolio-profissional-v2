@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 
 import dynamic from "next/dynamic";
 
-const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false })
+const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: true })
 
 export default function Home() {
   return (
@@ -11,7 +11,9 @@ export default function Home() {
       <div className="lg:mx-16">
         <Navbar />
       </div>
-      <Header />
+      <div className="container">
+        <Header />
+      </div>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
       </main>
     </>
