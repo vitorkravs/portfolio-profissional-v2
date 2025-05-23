@@ -1,18 +1,21 @@
 "use client";
 
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from "react";
 
+// Carregue os componentes dinamicamente com SSR desabilitado
+const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
+const Header = dynamic(() => import("@/components/Header"), { ssr: false });
+
 export default function Home() {
-  const [isClient, setIsClient] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    setIsMounted(true);
   }, []);
 
-  if (!isClient) {
-    return null;
+  if (!isMounted) {
+    return null; // Ou um componente de loading
   }
 
   return (
