@@ -97,7 +97,7 @@ export default function Header() {
                 variants={itemVariants}
             >
                 <motion.h1
-                    className="w-full text-4xl sm:text-5xl md:text-[4rem] lg:text-[4rem] xl:text-[5rem] text-center lg:text-left font-extrabold bg-gradient-to-r from-main-500 to-main-400 text-transparent bg-clip-text tracking-tight md:pt-12 lg:pt-0 mb-14"
+                    className="w-full text-4xl sm:text-5xl md:text-[4rem] lg:text-[4rem] xl:text-[5rem] text-center lg:text-left font-extrabold bg-gradient-to-r from-main-500 to-main-400 text-transparent bg-clip-text tracking-tight md:pt-12 lg:pt-0 mb-6 md:mb-14"
                     variants={itemVariants}
                 >
                     Desenvolvedor{' '} <br />
@@ -111,7 +111,7 @@ export default function Header() {
                     variants={itemVariants}
                     transition={{ delay: 0.4 }}
                 >
-                    <p className="mb-6 px-4 py-3 bg-gradient-to-r from-main-100/20 to-main-200/20 dark:from-main-900/30 dark:to-main-800/30 rounded-xl backdrop-blur-sm border border-main-300/30 dark:border-main-600/30">
+                    <p className="mb-2 md:mb-6 px-4 md:py-3 bg-gradient-to-r from-main-100/20 to-main-200/20 dark:from-main-900/30 dark:to-main-800/30 rounded-xl backdrop-blur-sm border border-main-300/30 dark:border-main-600/30">
                         <span className="text-main-500 dark:text-main-400 font-semibold">Fala pessoal!</span> Meu nome é <span className="font-bold bg-gradient-to-r from-main-500 to-main-400 bg-clip-text text-transparent">Vitor</span>
                     </p>
                     <p className="px-4 py-3 bg-white/10 dark:bg-gray-900/10 rounded-xl backdrop-blur-sm border border-main-300/30 dark:border-main-600/30">
