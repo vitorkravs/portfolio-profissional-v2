@@ -89,7 +89,7 @@ export default function Header() {
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="container relative grid grid-cols-1 lg:grid-cols-2 md:gap-16 justify-center items-center min-h-[600px] md:min-h-screen transition-colors duration-300"
+            className="container relative grid grid-cols-1 lg:grid-cols-2 md:gap-16 justify-center items-center min-h-[600px] md:min-h-screen"
         >
             {/* Conteúdo de Texto */}
             <motion.div
@@ -115,7 +115,7 @@ export default function Header() {
                         <span className="text-main-500 dark:text-main-400 font-semibold">Fala pessoal!</span> Meu nome é <span className="font-bold bg-gradient-to-r from-main-500 to-main-400 bg-clip-text text-transparent">Vitor</span>
                     </p>
                     <p className="px-4 py-3 bg-white/10 dark:bg-gray-900/10 rounded-xl backdrop-blur-sm border border-main-300/30 dark:border-main-600/30">
-                        Estudante de <span className="font-medium text-main-500 dark:text-main-400">Desenvolvimento Web</span> e <span className="font-medium text-main-500 dark:text-main-400">Tecnologia</span>, com 20 anos, atualmente focado em aprimorar minhas habilidades enquanto curso <span className="font-medium">Engenharia de Software</span>.
+                        Estudante de <span className="font-medium text-main-500 dark:text-main-400">Desenvolvimento Web</span> e <span className="font-medium text-main-500 dark:text-main-400">Tecnologia</span>, com 21 anos, atualmente focado em aprimorar minhas habilidades enquanto curso <span className="font-medium">Engenharia de Software</span>.
                     </p>
                 </motion.div>
             </motion.div>
