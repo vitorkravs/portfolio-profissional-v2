@@ -57,7 +57,16 @@ export default function Navbar() {
 
                 {/* Navegação para desktop */}
                 <div className="hidden lg:flex items-center gap-4">
-                    <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-sm sm:text-base cursor-pointer">
+                    <Button
+                        variant="ghost"
+                        onClick={() => {
+                            const sectionElement = document.querySelector(`#sobre-mim`);
+                            if (sectionElement) {
+                                const y = sectionElement.getBoundingClientRect().top + window.scrollY - 100;
+                                window.scrollTo({ top: y, behavior: 'smooth' });
+                            }
+                        }}
+                        className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-sm sm:text-base cursor-pointer">
                         Sobre Mim
                     </Button>
                     <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-sm sm:text-base cursor-pointer">
@@ -133,7 +142,17 @@ export default function Navbar() {
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ delay: 0.05 }}
                             >
-                                <Button variant="ghost" className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
+                                <Button
+                                    variant="ghost"
+                                    onClick={() => {
+                                        setIsMenuOpen(false)
+                                        const sectionElement = document.querySelector(`#sobre-mim`);
+                                        if (sectionElement) {
+                                            const y = sectionElement.getBoundingClientRect().top + window.scrollY - 80;
+                                            window.scrollTo({ top: y, behavior: 'smooth' });
+                                        }
+                                    }}
+                                    className="text-main-900 dark:text-main-50 hover:text-main-600 hover:dark:text-main-400 hover:underline rounded-full text-base cursor-pointer py-4 w-full">
                                     Sobre Mim
                                 </Button>
                             </motion.div>

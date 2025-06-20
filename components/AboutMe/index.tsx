@@ -176,7 +176,7 @@ export default function AboutMe() {
             animate="visible"
             variants={containerVariants}
             className="container relative py-16 md:py-24 overflow-hidden"
-            id="about"
+            id="sobre-mim"
         >
             <motion.h1
                 className="w-full text-3xl sm:text-4xl md:text-[3rem] lg:text-[3rem] xl:text-[4rem] text-center font-extrabold bg-gradient-to-r from-main-500 to-main-400 text-transparent bg-clip-text tracking-tight md:pt-12 lg:pt-0 mb-6 md:mb-14"
