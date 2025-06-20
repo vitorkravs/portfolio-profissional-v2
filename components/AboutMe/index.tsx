@@ -184,9 +184,9 @@ export default function AboutMe() {
             >
                 # Um pouco Sobre Mim
             </motion.h1>
-            <div className="mx-4 md:mx-12">
+            <div className="container">
                 {isMobile ? (
-                    <div className="flex flex-col">
+                    <div className="container flex flex-col">
                         <motion.div
                             className="flex justify-center mb-8"
                             initial={{ opacity: 0, y: 20 }}
@@ -272,7 +272,7 @@ export default function AboutMe() {
                         </div>
                     </div>
                 ) : (
-                    <div className="grid md:grid-cols-13 gap-8 lg:gap-8">
+                    <div className="container grid md:grid-cols-13 gap-8 lg:gap-8">
                         <div className="col-span-6 space-y-6 sticky top-0 h-fit pt-8">
                             {aboutMeSections.map((section, index) => (
                                 <motion.div
