@@ -346,7 +346,7 @@ export default function AboutMe() {
                             </motion.div>
                         </div>
 
-                        <div className="col-span-6 relative mt-16" ref={timelineRef}>
+                        <div className="col-span-6 relative mt-16 mr-4 md:mr-12" ref={timelineRef}>
                             <AnimatePresence>
                                 {aboutMeSections.map((section, index) => (
                                     <motion.div
