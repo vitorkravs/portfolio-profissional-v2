@@ -182,7 +182,7 @@ export default function AboutMe() {
                 className="w-full text-3xl sm:text-4xl md:text-[3rem] lg:text-[3rem] xl:text-[4rem] text-center font-extrabold bg-gradient-to-r from-main-500 to-main-400 text-transparent bg-clip-text tracking-tight md:pt-12 lg:pt-0 mb-6 md:mb-14"
                 variants={itemVariants}
             >
-                # Um pouco Sobre Mim
+                # Um Pouco Sobre Mim
             </motion.h1>
             <div className="container mx-4 md:mx-12">
                 {isMobile ? (
