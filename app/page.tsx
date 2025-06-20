@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import AnimationScroll from '@/components/AnimationScroll';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
+import AboutMe from '@/components/AboutMe';
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 const Header = dynamic(() => import("@/components/Header"), { ssr: false });
@@ -30,7 +31,7 @@ export default function Home() {
         <AnimationScroll />
       </div>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start ">
-        <div className='h-500'></div>
+        <AboutMe />
         <div className='h-500'></div>
       </main>
 
