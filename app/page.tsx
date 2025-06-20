@@ -30,7 +30,7 @@ export default function Home() {
         <Header />
         <AnimationScroll />
       </div>
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start ">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center">
         <AboutMe />
         <div className='h-500'></div>
       </main>
