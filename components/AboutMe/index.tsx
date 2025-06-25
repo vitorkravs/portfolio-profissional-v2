@@ -92,6 +92,30 @@ const contentVariants = {
 export default function AboutMe() {
     const aboutMeSections = [
         {
+            title: "Um Pouco Sobre Minha Jornada",
+            description:
+                "Bora falar um pouco sobre minha jornada dos estudos de forma objetiva",
+            icon: "🚀",
+            color: "bg-gradient-to-br from-purple-500 to-indigo-600",
+        },
+        {
+            title: "Tenho Experiência como Desenvolvedor Front-End?",
+            description:
+                "Uma introdução apenas, teremos uma sessão só para isso",
+            icon: "💻",
+            color: "bg-gradient-to-br from-blue-500 to-cyan-500",
+        },
+        {
+            title: "E Back-End? Tenho alguma Experiência?",
+            description:
+                "Já sou um FullStack? De uma olhada nesse resumo aqui",
+            icon: "🔧",
+            color: "bg-gradient-to-br from-green-500 to-emerald-600",
+        }
+    ];
+
+    const aboutMeSectionsCompleted = [
+        {
             title: "Minha Jornada como Desenvolvedor",
             description:
                 "Minha paixão por tecnologia começou cedo, então iniciei com cursos online por conta própria. Depois, fiz um curso de Python na FATEC, que despertou ainda mais meu interesse pela área. Isso me motivou a mergulhar de vez no desenvolvimento e iniciar minha graduação em Engenharia de Software pela Uninter.",
@@ -348,7 +372,7 @@ export default function AboutMe() {
 
                         <div className="col-span-6 relative mt-16 mr-4 md:mr-12" ref={timelineRef}>
                             <AnimatePresence>
-                                {aboutMeSections.map((section, index) => (
+                                {aboutMeSectionsCompleted.map((section, index) => (
                                     <motion.div
                                         key={index}
                                         id={`section-${index}`}
