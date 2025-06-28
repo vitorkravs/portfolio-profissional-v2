@@ -208,7 +208,7 @@ export default function AboutMe() {
             >
                 # Um Pouco Sobre Mim
             </motion.h1>
-            <div className="container mx-4 md:mx-12">
+            <div className="container md:mx-12">
                 {isMobile ? (
                     <div className="flex flex-col">
                         <motion.div
@@ -227,46 +227,18 @@ export default function AboutMe() {
                             </div>
                         </motion.div>
 
-                        <div className="relative" ref={timelineRef}>
-                            <div className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-300 to-pink-300 rounded-full"></div>
-
-                            <motion.div
-                                ref={scrollIconRef}
-                                className="absolute left-0 top-0 w-12 h-12 bg-gradient-to-br from-main-600 to-main-400 rounded-full flex items-center justify-center z-10 shadow-lg"
-                                style={{ top: iconY }}
-                                initial={{ scale: 0, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.8 }}
-                            >
-                                <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                                    <Image
-                                        alt="foto de perfil"
-                                        src={imagemPerfil}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                            </motion.div>
-
+                        <div className="relative flex flex-col justify-center items-center">
                             <AnimatePresence>
-                                {aboutMeSections.map((section, index) => (
+                                {aboutMeSectionsCompleted.map((section, index) => (
                                     <motion.div
                                         key={index}
                                         id={`section-${index}`}
-                                        className="relative mb-8 ml-9 p-6 rounded-xl bg-white bg-opacity-70 backdrop-blur-sm shadow-md timeline-section"
+                                        className="relative mb-8 p-6 rounded-xl bg-white bg-opacity-70 backdrop-blur-sm shadow-md timeline-section"
                                         initial="hidden"
                                         whileInView="visible"
-                                        viewport={{ once: true, margin: "-50px" }}
                                         variants={sectionVariants}
                                         transition={{ delay: index * 0.15 }}
                                     >
-                                        <motion.div
-                                            className={`absolute -left-6 top-6 w-6 h-6 rounded-full flex items-center justify-center shadow-md ${section.color}`}
-                                            variants={timelineCircleVariants}
-                                        >
-                                            <span className="text-white text-sm">{index + 1}</span>
-                                        </motion.div>
-
                                         <motion.div variants={contentVariants}>
                                             <div className="flex items-center mb-4">
                                                 <div className={`w-10 h-10 rounded-lg ${section.color} flex items-center justify-center text-xl text-white mr-3`}>
