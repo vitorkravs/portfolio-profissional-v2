@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import AnimationScroll from '@/components/AnimationScroll';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 import AboutMe from '@/components/AboutMe';
+import HardSkills from '@/components/HardSkills';
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 const Header = dynamic(() => import("@/components/Header"), { ssr: false });
@@ -32,6 +33,7 @@ export default function Home() {
       </div>
       <main className="flex flex-col gap-[32px] row-start-2 items-center">
         <AboutMe />
+        <HardSkills />
         <div className='h-500'></div>
       </main>
 
