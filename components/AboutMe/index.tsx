@@ -233,7 +233,7 @@ export default function AboutMe() {
                                     <motion.div
                                         key={index}
                                         id={`section-${index}`}
-                                        className="relative mb-8 p-6 rounded-xl bg-white bg-opacity-70 backdrop-blur-sm shadow-md timeline-section"
+                                        className="relative mb-8 p-6 rounded-xl bg-white dark:bg-gray-800 bg-opacity-70 backdrop-blur-sm shadow-md timeline-section"
                                         initial="hidden"
                                         whileInView="visible"
                                         variants={sectionVariants}
@@ -244,11 +244,11 @@ export default function AboutMe() {
                                                 <div className={`w-10 h-10 rounded-lg ${section.color} flex items-center justify-center text-xl text-white mr-3`}>
                                                     {section.icon}
                                                 </div>
-                                                <h3 className="text-xl font-bold text-gray-800">
+                                                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
                                                     {section.title}
                                                 </h3>
                                             </div>
-                                            <p className="text-gray-600 leading-relaxed">
+                                            <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
                                                 {section.description}
                                             </p>
                                         </motion.div>
@@ -268,7 +268,7 @@ export default function AboutMe() {
                         </div>
                     </div>
                 ) : (
-                    <div className="grid md:grid-cols-13 gap-8 lg:gap-8">
+                    <div className="grid md:grid-cols-13 gap-8">
                         <div className="col-span-6 space-y-6 sticky top-0 h-fit pt-8">
                             {aboutMeSections.map((section, index) => (
                                 <motion.div
@@ -342,13 +342,13 @@ export default function AboutMe() {
                             </motion.div>
                         </div>
 
-                        <div className="col-span-6 relative mt-16 mr-4 md:mr-12" ref={timelineRef}>
+                        <div className="col-span-6 relative mt-16 mb-2 mr-4 md:mr-12" ref={timelineRef}>
                             <AnimatePresence>
                                 {aboutMeSectionsCompleted.map((section, index) => (
                                     <motion.div
                                         key={index}
                                         id={`section-${index}`}
-                                        className="relative mb-16 last:mb-0 p-6 rounded-xl bg-white bg-opacity-70 backdrop-blur-sm shadow-md timeline-section"
+                                        className="relative mb-16 last:mb-0 p-6 rounded-xl bg-white dark:bg-gray-800 bg-opacity-70 backdrop-blur-sm shadow-md timeline-section"
                                         initial="hidden"
                                         whileInView="visible"
                                         viewport={{ once: true, margin: "-100px" }}
@@ -375,11 +375,11 @@ export default function AboutMe() {
                                                 >
                                                     {section.icon}
                                                 </motion.div>
-                                                <h3 className="text-2xl font-bold text-gray-800">
+                                                <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
                                                     {section.title}
                                                 </h3>
                                             </div>
-                                            <p className="text-gray-600 leading-relaxed pl-16">
+                                            <p className="text-gray-600 dark:text-gray-200 leading-relaxed pl-16">
                                                 {section.description}
                                             </p>
                                         </motion.div>
