@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import AnimationScroll from '@/components/AnimationScroll';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 import AboutMe from '@/components/AboutMe';
-import HardSkills from '@/components/HardSkills';
 
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 const Header = dynamic(() => import("@/components/Header"), { ssr: false });
+const HardSkills = dynamic(() => import("@/components/HardSkills"), { ssr: false });
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
