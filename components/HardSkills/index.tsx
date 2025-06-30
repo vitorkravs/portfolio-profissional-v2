@@ -1,13 +1,13 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { useState, useRef } from "react"
+import { useState } from "react"
 import animationLaptop from "../../public/animations/animation-laptop.json"
 import Lottie from "lottie-react"
 import {
     SiNextdotjs, SiReact, SiTypescript, SiTailwindcss,
-    SiDocker, SiRust, SiFigma, SiMaterialdesign, SiGit,
-    SiReactquery, SiGooglemaps, SiMercadopago, SiPrisma,
+    SiDocker, SiRust, SiFigma, SiMaterialdesign,
+    SiReactquery, SiMercadopago, SiPrisma,
     SiJest, SiVite, SiSass,
     SiGoogle,
     SiBitbucket,
