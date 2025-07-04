@@ -203,12 +203,12 @@ export default function AboutMe() {
             id="sobre-mim"
         >
             <motion.h1
-                className="w-full text-3xl sm:text-4xl md:text-[3rem] lg:text-[3rem] xl:text-[4rem] text-center font-extrabold bg-gradient-to-r from-main-500 to-main-400 text-transparent bg-clip-text tracking-tight md:pt-12 lg:pt-0 mb-6 md:mb-14"
+                className="w-full text-3xl sm:text-4xl md:text-[3rem] lg:text-[3rem] xl:text-[4rem] text-center font-extrabold bg-gradient-to-r from-main-500 to-main-400 text-transparent bg-clip-text tracking-tight md:pt-12 lg:pt-0 md:mb-14"
                 variants={itemVariants}
             >
                 # Um Pouco Sobre Mim
             </motion.h1>
-            <div className="container md:mx-12">
+            <div className="md:container md:mx-12">
                 {isMobile ? (
                     <div className="flex flex-col">
                         <motion.div
@@ -233,7 +233,7 @@ export default function AboutMe() {
                                     <motion.div
                                         key={index}
                                         id={`section-${index}`}
-                                        className="relative mb-8 p-6 rounded-xl bg-white dark:bg-gray-800 bg-opacity-70 backdrop-blur-sm shadow-md timeline-section"
+                                        className="relative flex flex-col max-w-[700px] justify-end mb-8 p-6 rounded-xl bg-white dark:bg-gray-800 bg-opacity-70 backdrop-blur-sm shadow-md timeline-section"
                                         initial="hidden"
                                         whileInView="visible"
                                         variants={sectionVariants}
