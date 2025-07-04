@@ -1,7 +1,6 @@
-"use client"; // Necessário para os hooks useEffect e useState
+"use client";
 
 import { motion } from "framer-motion";
-import "react-vertical-timeline-component/style.min.css";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useEffect, useState } from "react";
 
@@ -27,7 +26,6 @@ const itemVariants = {
     }
 };
 
-// Dados das experiências
 const experiences = [
     {
         date: "Abr 2025 - Atual",
@@ -52,7 +50,6 @@ const experiences = [
         isLast: true
     }
 ];
-
 
 const performanceData = [
     { name: 'Jan', performance: 65 }, { name: 'Fev', performance: 72 },
@@ -149,7 +146,6 @@ export default function Experience() {
                     </div>
                 </motion.div>
 
-                {/* Gráfico de performance */}
                 <motion.div
                     className="w-full bg-slate-50/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/80 dark:border-gray-800/80 p-6 rounded-2xl shadow-lg"
                     variants={itemVariants}
