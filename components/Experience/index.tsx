@@ -1,8 +1,22 @@
 "use client";
+import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
+
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { useEffect, useState } from "react";
+
+type ColorKey = 'main' | 'purple' | 'fuchsia' | 'violet' | 'pink';
+
+type ColorClasses = {
+    [key in ColorKey]: {
+        bg?: string;
+        text?: string;
+        from?: string;
+        to?: string;
+        ring?: string;
+    };
+};
+
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -60,7 +74,7 @@ const performanceData = [
     { name: 'Nov', performance: 96 }, { name: 'Dez', performance: 98 },
 ];
 
-const colorClasses: any = {
+const colorClasses: ColorClasses = {
     main: {
         bg: 'bg-main-500', text: 'text-main-500', from: 'from-main-500', to: 'to-main-300', ring: 'ring-main-300'
     },
@@ -79,7 +93,7 @@ const colorClasses: any = {
 }
 
 const TimelineItem = ({ date, title, company, description, isLast, color }
-    : { date: string, title: string, company: string, description: string, isLast: boolean, color: string }
+    : { date: string, title: string, company: string, description: string, isLast: boolean, color: ColorKey }
 ) => {
     const theme = colorClasses[color] || colorClasses.main;
     return (
@@ -140,6 +154,7 @@ export default function Experience() {
                             <TimelineItem
                                 key={index}
                                 {...exp}
+                                color={exp.color as ColorKey}
                                 isLast={exp.isLast || index === experiences.length - 1}
                             />
                         ))}
