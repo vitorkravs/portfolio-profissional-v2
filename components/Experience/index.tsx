@@ -137,7 +137,7 @@ export default function Experience() {
         >
             <motion.h1
                 className="w-full text-3xl sm:text-4xl md:text-[3rem] text-center font-extrabold bg-gradient-to-r from-main-500 to-main-400 text-transparent bg-clip-text tracking-tight mb-12 md:mb-20"
-                variants={itemVariants}
+
             >
                 # Experiência Profissional
             </motion.h1>
@@ -146,7 +146,6 @@ export default function Experience() {
                 {/* Linha do tempo */}
                 <motion.div
                     className="w-full"
-                    variants={itemVariants}
                 >
                     <h2 className="text-2xl font-bold mb-8 text-main-500 dark:text-main-400">Minha Jornada</h2>
                     <div className="relative pl-6">
@@ -163,7 +162,6 @@ export default function Experience() {
 
                 <motion.div
                     className="w-full bg-slate-50/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/80 dark:border-gray-800/80 p-6 rounded-2xl shadow-lg"
-                    variants={itemVariants}
                 >
                     <h2 className="text-2xl font-bold mb-8 text-main-500 dark:text-main-400">Meu Aproveitamento</h2>
                     <div className="h-[400px]">
