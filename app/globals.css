@@ -278,7 +278,7 @@
   /* Estilize a barra de rolagem horizontal globalmente */
   html,
   body {
-    overflow-x: auto; /* Garante que a rolagem horizontal esteja ativada */
+    overflow-x: hidden; /* Garante que a rolagem horizontal esteja ativada */
   }
 
   /* Personalização da barra de rolagem horizontal */
