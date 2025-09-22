@@ -32,7 +32,7 @@ export default function Home() {
       } else {
         setShowLoadingOnce(false);
       }
-    } catch (e) {
+    } catch {
       setShowLoadingOnce(false);
     }
 
