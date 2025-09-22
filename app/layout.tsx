@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Roboto } from "next/font/google";
+import { cookies } from 'next/headers';
 
 import "./globals.css";
 
@@ -17,13 +18,31 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const darkCookie = cookieStore.get('theme_dark');
+  const colorCookie = cookieStore.get('theme_color');
+
+  const darkMode = darkCookie ? darkCookie.value === 'true' : true;
+  const color = colorCookie ? colorCookie.value : 'cyan';
+
+  const htmlClass = `${darkMode ? 'dark' : ''} ${color}`.trim();
+
+  const removeCzShortcut = `
+    (function(){
+      try{ var b = document.body; if(b && b.hasAttribute && b.hasAttribute('cz-shortcut-listen')) { b.removeAttribute('cz-shortcut-listen'); } }catch(e){}
+    })();
+  `;
+
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className={htmlClass} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: removeCzShortcut }} />
+      </head>
       <body
         className={`${roboto.variable} antialiased bg-white dark:bg-slate-950`}
       >
