@@ -73,7 +73,7 @@ export function SelectTheme() {
                             return (
                                 <button
                                     key={item.value}
-                                    onClick={() => setColor(item.value)}
+                                    onClick={() => { setColor(item.value); try { document.cookie = `theme_color=${item.value}; path=/; max-age=${60 * 60 * 24 * 365}`; } catch { } }}
                                     className={`flex gap-2 items-center px-6 py-1.5 rounded-md transition-colors duration-300 cursor-pointer
                                         ${isSelected ? `${item.bgChecked} ${item.darkBgChecked}` : ''}
                                     `}
