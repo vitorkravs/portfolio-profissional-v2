@@ -15,6 +15,9 @@ export default function SelectModeTheme() {
 
     const toggleDarkMode = async () => {
         setDarkModeContext(!darkModeContext)
+        try {
+            document.cookie = `theme_dark=${!darkModeContext}; path=/; max-age=${60 * 60 * 24 * 365}`;
+        } catch { }
     };
 
     useEffect(() => {
